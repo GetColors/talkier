@@ -11,7 +11,7 @@ app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
     res.json({
-        message : 'Chat backend.',
+        message : 'Welcome to talkier.',
         status : {
             general: true,
         },
