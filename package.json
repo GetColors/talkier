@@ -1,0 +1,23 @@
+{
+  "name": "talkier",
+  "version": "1.0.0",
+  "description": "talk with your backend services easily from slack and telegram",
+  "main": "app.js",
+  "scripts": {
+    "start": "server/prod",
+    "dev": "nodemon server/dev.js",
+    "test": "test"
+  },
+  "author": "Camilo Alaniz",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.0",
+    "slackbots": "^1.2.0",
+    "uuid": "^3.3.2"
+  }
+}
