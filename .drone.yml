@@ -6,4 +6,5 @@ steps:
   image: node:11-alpine
   commands:
   - npm install
+  - chmod +rwx ./node_modules/.bin/jest
   - npm run test
