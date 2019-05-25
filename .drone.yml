@@ -1,3 +1,6 @@
+kind: pipeline
+name: talkier
+
 steps:
 - name: test
   image: node:11-alpine
