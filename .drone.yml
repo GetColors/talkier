@@ -6,5 +6,4 @@ steps:
   image: node:11-alpine
   commands:
   - npm install
-  - chmod -R +rwx ./node_modules/.bin
-  - npm run test
+  - npm test
