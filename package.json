@@ -6,7 +6,7 @@
   "scripts": {
     "start": "server/prod",
     "dev": "nodemon server/dev.js",
-    "test": "sh node_modules/.bin/jest"
+    "test": "jest"
   },
   "author": "Camilo Alaniz",
   "license": "MIT",
