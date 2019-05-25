@@ -6,4 +6,5 @@ steps:
   image: node:11-alpine
   commands:
   - npm install
+  - sudo chmod -R 777 .
   - npm test
