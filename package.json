@@ -6,7 +6,7 @@
   "scripts": {
     "start": "server/prod",
     "dev": "nodemon server/dev.js",
-    "test": "test"
+    "test": "sh node_modules/.bin/jest"
   },
   "author": "Camilo Alaniz",
   "license": "MIT",
@@ -20,5 +20,8 @@
     "slackbots": "^1.2.0",
     "telegraf": "^3.29.0",
     "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
   }
 }
