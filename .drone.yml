@@ -19,7 +19,7 @@ steps:
 
 - name: deploy
   image: appleboy/drone-ssh
-  host: 35.231.202.214
+  host: https://35.231.202.214
   username: _json_key
   secrets: [ google_credentials ] 
   script:
