@@ -25,8 +25,8 @@ steps:
   secrets: [ google_credentials ]
   commands:
     - yes | apt-get install python3
-    - python3 generate_key.py key.json
     - pip install --upgrade setuptools
+    - python3 generate_key.py key.json
     - gcloud config set project $PROJECT_ID
     - gcloud config set compute/zone $COMPUTE_ZONE
     - gcloud auth activate-service-account --key-file key.json
