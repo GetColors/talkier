@@ -18,7 +18,7 @@ steps:
       from_secret: google_credentials
 
 - name: deplot
-  image: Google/cloud-sdk:latest
+  image: google/cloud-sdk:latest
   environment:
     PROJECT_ID: talkier
     COMPUTE_ZONE: us-east1-b
