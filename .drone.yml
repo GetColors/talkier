@@ -18,8 +18,9 @@ steps:
       from_secret: google_credentials
 
 - name: deploy
-  image: google/cloud-sdk:alpine
-  commands:
-    - gcloud auth activate-service-account --key-file=$google_credentials
-    - gcloud compute ssh talkier --zone=us-central1-a
+  image: appleboy/drone-ssh
+  host: 35.231.202.214
+  username: _json_key
+  secrets: [ google_credentials ] 
+  script:
     - docker run -d -p 3000:3000 gcr.io/getcolors/talkier:latest
