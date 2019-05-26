@@ -23,6 +23,6 @@ steps:
     GOOGLE_APPLICATION_CREDENTIALS:
       from_secret: google_credentials
   commands:
-    - gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
+    - gcloud auth activate-service-account --key-file="$GOOGLE_APPLICATION_CREDENTIALS"
     - gcloud compute ssh talkier --zone=us-central1-a
     - docker run -d -p 3000:3000 gcr.io/getcolors/talkier:latest
