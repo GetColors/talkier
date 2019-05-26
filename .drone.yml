@@ -30,4 +30,5 @@ steps:
     - gcloud config set compute/zone $COMPUTE_ZONE
     - gcloud auth activate-service-account --key-file key.json
     - gcloud compute ssh talkier
-    - docker run -d -p 3000:3000 gcr.io/getcolors/talkier:latest
+    - docker pull -t talkier gcr.io/getcolors/talkier:latest
+    - docker run -d -p 3000:3000 talkier
