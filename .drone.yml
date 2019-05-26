@@ -18,9 +18,13 @@ steps:
       from_secret: google_credentials
 
 - name: deploy
-  image: tonglil/auth-gcloud
+  image: google/cloud-sdk:alpine
+  environment:
+    GOOGLE_APPLICATION_CREDENTIALS:
+      from_secret: google_credentials
+  volumes:
+    - $GOOGLE_APPLICATION_CREDENTIALS:~/.config/gcloud/application_default_credentials.json
   commands:
-    - auth-gcloud
-    - gcloud compute ssh talkier --zone=us-east1-b
-    - docker pull gcr.io/getcolors/talkier:latest
-  secret: [google_credentials]
+    - gcloud auth application-default print-access-token
+    - gcloud compute ssh talkier --zone=us-central1-a
+    - docker run -d -p 3000:3000 gcr.io/getcolors/talkier:latest
