@@ -8,11 +8,10 @@ steps:
   - npm install
   - npm test
 
-steps:
 - name: publish  
   image: plugins/gcr
   settings:
-    repo: getcolors/getcolors
+    repo: getcolors/talkier
     dockerfile: docker/node/Dockerfile
     tags: latest
     json_key:
