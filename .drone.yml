@@ -19,8 +19,8 @@ steps:
 
 - name: deploy
   image: tonglil/auth-gcloud
-    commands:
-      - auth-gcloud
-      - gcloud compute ssh talkier --zone=us-east1-b
-      - docker pull gcr.io/getcolors/talkier:latest
-    secret: [google_credentials]
+  commands:
+    - auth-gcloud
+    - gcloud compute ssh talkier --zone=us-east1-b
+    - docker pull gcr.io/getcolors/talkier:latest
+  secret: [google_credentials]
