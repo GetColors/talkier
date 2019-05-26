@@ -21,6 +21,5 @@ steps:
   image: google/cloud-sdk:alpine
   secrets: ["google_credentials"]
   commands:
-    - gcloud compute ssh talkier
+    - gcloud compute ssh talkier --zone=us-central1-a
     - docker run -d -p 3000:3000 gcr.io/getcolors/talkier:latest
-    
