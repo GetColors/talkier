@@ -19,8 +19,6 @@ steps:
 
 - name: deploy
   image: google/cloud-sdk:alpine
-  json_key:
-      from_secret: google_credentials
   commands:
     - gcloud compute ssh talkier --zone=us-central1-a
     - docker run -d -p 3000:3000 gcr.io/getcolors/talkier:latest
