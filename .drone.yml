@@ -17,12 +17,17 @@ steps:
     json_key:
       from_secret: google_credentials
 
-- name: deploy
-  image: google/cloud-sdk:alpine
+- name: deplot
+  image: Google/cloud-sdk:latest
   environment:
-    GOOGLE_APPLICATION_CREDENTIALS:
-      from_secret: google_credentials
+    PROJECT_ID: talkier
+    COMPUTE_ZONE: us-east1-b
+  secrets: [ google_credentials ]
   commands:
-    - gcloud auth application-default print-access-token
-    - gcloud compute ssh talkier --zone=us-central1-a
+    - yes | apt-get install python3
+    - python3 generate_key.py key.json
+    - gcloud config set project $PROJECT_ID
+    - gcloud config set compute/zone $COMPUTE_ZONE
+    - gcloud auth activate-service-account --key-file key.json
+    - gcloud compute ssh talkier
     - docker run -d -p 3000:3000 gcr.io/getcolors/talkier:latest
