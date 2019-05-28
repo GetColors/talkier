@@ -5,7 +5,7 @@ import sys
 
 
 
-sAll = os.environ['google_credentials']
+sAll = os.environ['json_key']
 
 sEnd = '-----END PRIVATE KEY-----'
 i1 = sAll.index('-----BEGIN PRIVATE KEY-----')
