@@ -17,7 +17,7 @@ steps:
     json_key:
       from_secret: google_credentials
 
-- name: deplot
+- name: deploy
   image: google/cloud-sdk:latest
   environment:
     PROJECT_ID: talkier
@@ -25,8 +25,7 @@ steps:
   secrets: [ google_credentials ]
   commands:
     - yes | apt-get install python3
-    - pip install --upgrade setuptools
-    - python3 generate_key.py key.json
+    - python3 key_generate.py key.json
     - gcloud config set project $PROJECT_ID
     - gcloud config set compute/zone $COMPUTE_ZONE
     - gcloud auth activate-service-account --key-file key.json
