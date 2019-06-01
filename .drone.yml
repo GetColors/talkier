@@ -30,6 +30,7 @@ steps:
     - gcloud config set project $PROJECT_ID
     - gcloud config set compute/zone $COMPUTE_ZONE
     - gcloud auth activate-service-account --key-file key.json
-    - gcloud compute ssh talkier --command="docker login -u _json_key -p “$(cat key.json)” https://gcr.io"
+    - gcloud compute scp key.json talkier:~/credentials/key.json
+    - gcloud compute ssh talkier --command="docker login -u _json_key -p “$(cat ~/credentials/key.json)” https://gcr.io"
     - gcloud compute ssh talkier --command="docker pull gcr.io/getcolors/talkier:latest"
     - gcloud compute ssh talkier --command="docker run -d -p 3000:3000 talkier"
