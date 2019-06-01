@@ -22,7 +22,8 @@ steps:
   environment:
     PROJECT_ID: talkier
     COMPUTE_ZONE: us-east1-b
-  secrets: [ google_credentials ]
+    google_credentials: 
+      from_secret: google_credentials
   commands:
     - yes | apt-get install python3
     - python3 key_generate.py key.json
