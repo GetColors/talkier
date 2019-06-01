@@ -18,7 +18,7 @@ steps:
       from_secret: google_credentials
 
 - name: deploy
-  image: google/cloud-sdk:latest
+  image: google/cloud-sdk:alpine
   environment:
     PROJECT_ID: getcolors
     COMPUTE_ZONE: us-east1-b
