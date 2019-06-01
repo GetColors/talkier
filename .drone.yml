@@ -32,6 +32,7 @@ steps:
     - gcloud auth activate-service-account --key-file key.json
     - gcloud compute ssh talkier --command="rm -rf ~/credentials"
     - gcloud compute ssh talkier --command="mkdir ~/credentials"
+    - gcloud compute ssh talkier --command="cd ~/ && ls"
     - gcloud compute scp key.json talkier:~/credentials/key.json
     - gcloud compute ssh talkier --command="docker login -u _json_key -p “$(cat ~/credentials/key.json)” https://gcr.io"
     - gcloud compute ssh talkier --command="docker pull gcr.io/getcolors/talkier:latest"
