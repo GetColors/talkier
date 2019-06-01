@@ -20,7 +20,7 @@ steps:
 - name: deploy
   image: google/cloud-sdk:latest
   environment:
-    PROJECT_ID: talkier
+    PROJECT_ID: getcolors
     COMPUTE_ZONE: us-east1-b
     google_credentials: 
       from_secret: google_credentials
