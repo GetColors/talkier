@@ -25,7 +25,7 @@ steps:
     google_credentials: 
       from_secret: google_credentials
   commands:
-    - yes | apt-get install python3
+    - yes | apk add install python3
     - python3 key_generate.py key.json
     - gcloud config set project $PROJECT_ID
     - gcloud config set compute/zone $COMPUTE_ZONE
